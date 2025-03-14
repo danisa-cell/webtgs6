@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background-color: #9e9ed3; /* Warna ungu pastel */
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #D8BFD8; /* Ungu */
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #B0E0E6; /* Biru pastel */
+    }
+    tr:nth-child(odd) {
+      background-color: #FFB6C1; /* Pink pastel */
+    }
+  </style>
+</head>
+<body>
+  <div class="ui grid">
+    <!-- Sidebar -->
+    <div class="four wide column">
+      <div class="ui vertical menu">
+        <div class="item">
+          <h2 class="ui header">
+            <i class="leaf icon"></i> ADVIERT'Mark
+          </h2>
+        </div>
+        <div class="item">
+          <div class="ui input">
+            <input type="text" placeholder="Cari Menu...">
+          </div>
+        </div>
+        <a class="item active">Dashboard</a>
+        <div class="item">
+          <div class="header">Bussiness Analis</div>
+          <a class="item">  Multi Media</a>
+          <a class="item">Iot</a>
+        </div>
+        <div class="item">
+          <div class="header">TABEL DAN FORM</div>
+          <a class="item">Form</a>
+          <a class="item">Tabel</a>
+        </div>
+        <div class="item">
+          <div class="header">OTENTIKASI</div>
+          <a class="item">Login</a>
+          <a class="item">Registasi ulang</a>
+        </div>
+        <div class="item">
+          <button class="ui green button">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="twelve wide column">
+      <h2 class="ui header">Welcome back, Danis Atia Agara:243307041</h2>
+      
+      <div class="ui two column grid">
+        <div class="column">
+          <h3>Income Statement</h3>
+          <canvas id="incomeChart"></canvas>
+        </div>
+        <div class="column">
+          <div class="ui blue card">
+            <div class="content">
+              <div class="header">Laba (YtD)</div>
+              <h1>100.01%</h1>
+              <p>IDR 1.800 M Year to Date</p>
+              <p>21 Mei 23 to GS 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Pencapaian OS Kredit</h3>
+      <div class="ui four cards">
+        <div class="ui blue card">
+          <div class="content">
+            <div class="header">Supplier</div>
+            <p>OS: 23,938 M</p>
+            <p>GS: 20,900 M</p>
+            <p>200.01%</p>
+          </div>
+        </div>
+        <div class="ui yellow card">
+          <div class="content">
+            <div class="header">Digital Marketingl</div>
+            <p>OS: 3,938 M</p>
+            <p>GS: 2,900 M</p>
+            <p>190.01%</p>
+          </div>
+        </div>
+        <div class="ui red card">
+          <div class="content">
+            <div class="header">Project Manajement</div>
+            <p>OS: 190,938 M</p>
+            <p>GS: 192,900 M</p>
+            <p>99.01%</p>
+          </div>
+        </div>
+        <div class="ui green card">
+          <div class="content">
+            <div class="header">Kredit UMKM</div>
+            <p>OS: 2,938 M</p>
+            <p>GS: 2,900 M</p>
+            <p>100.01%</p>
+          </div>
+        </div>
+        <div class="ui olive card">
+          <div class="content">
+            <div class="header">Pemasok Komersial</div>
+            <p>OS: 23,938 M</p>
+            <p>GS: 20,900 M</p>
+            <p>200.01%</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Data Laporan Marketing</h3>
+      <table>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Jenis file </th>
+          <th>Jumlah</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Andi</td>
+          <td>Konsumer</td>
+          <td>IDR 10,000 M</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Budi</td>
+          <td>Ritel</td>
+          <td>IDR 8,000 M</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Citra</td>
+          <td>KPR & KKB</td>
+          <td>IDR 15,000 M</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Dina</td>
+          <td>UMKM marketing </td>
+          <td>IDR 5,000 M</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script>
+    const ctx = document.getElementById('incomeChart').getContext('2d');
+    const incomeChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli'],
+        datasets: [{
+          label: '2023',
+          data: [50, 100, 150, 200, 180, 170, 190],
+          backgroundColor: 'rgba(54, 162, 235, 0.5)'
+        }, {
+          label: 'Target',
+          data: [60, 110, 160, 210, 190, 180, 200],
+          backgroundColor: 'rgba(255, 99, 132, 0.5)'
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

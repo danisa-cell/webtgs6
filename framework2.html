@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ui container">
+    <header class="ui inverted menu">
+      <div class="header item">TEMPLATE DESIGN</div>
+      <a class="item">ABOUT</a>
+      <a class="item">DOWNLOAD</a>
+      <a class="item">PRICING</a>
+      <a class="item">FEATURES</a>
+      <a class="item">CONTACT</a>
+      <div class="right menu">
+        <div class="item">
+          <button class="ui primary button" onclick="document.getElementById('login-modal').style.display='block'">SIGN IN</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="white">
+      <h1 class="ui header welcome-text">Welcome.</h1>
+      <div class="ui action input">
+        <input type="text" placeholder="Search...">
+        <button class="ui icon button">
+          <i class="search icon"></i>
+        </button>
+      </div>
+      <div class="buttons">
+        <button class="ui blue button">FREE TRIAL</button>
+        <button class="ui basic button">see more</button>
+      </div>
+
+      <div class="landing-text">
+        <h2>Selamat Datang DI Web HTML.</h2>
+        <p>
+          Belajar HTML sangat menyenangkan kita harus bisa menguasai logika pemograman.
+          Mulai dari pengenalan HTML, Anda akan belajar tentang elemen, tag, dan konten, serta cara membangun struktur dasar halaman web. Klik urutan di bawah sesuai nomor 1. Apa itu HTML 2. Text Editor untuk belajar HTML 3. Struktur Dasar Dokumen HTML 4. Penggunaan Tag dan Atribut 5. Penjelasan dasar tentang Elemen Tag dan Konten
+        </p>
+      </div>
+
+      <div class="circle-menu">
+        <div class="circle-item">1</div>
+        <div class="circle-item">2</div>
+        <div class="circle-item">3</div>
+        <div class="circle-item">4</div>
+        <div class="circle-item">5</div>
+      </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="ui modal">
+      <i class="close icon"></i>
+      <div class="header">Login</div>
+      <div class="content">
+        <form class="ui form">
+          <div class="field">
+            <label>Username</label>
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" placeholder="Password">
+          </div>
+          <button class="ui primary button" type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #dec2c2, #1e003a, #4b0082);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .menu {
+      background-color: #d5f0f2;
+      border-bottom: 1px solid #444;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 5rem;
+      font-weight: bold;
+    }
+
+    .welcome-text {
+      color: white;
+      font-size: 6rem;
+    }
+
+    .ui.input input {
+      width: 300px;
+      border-radius: 20px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .landing-text {
+      margin-top: 50px;
+      font-size: 1.2rem;
+    }
+
+    .landing-text h2 {
+      font-size: 2rem;
+    }
+
+    .ui.primary.button {
+      background-color: #4A90E2;
+      border-radius: 20px;
+    }
+
+    .wave {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(75, 0, 130, 0.5), transparent);
+      border-radius: 50%;
+      filter: blur(90px);
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    .circle-menu {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .circle-item {
+      width: 50px;
+      height: 50px;
+      background-color: #4A90E2;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .circle-item:hover {
+      transform: scale(1.1);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+
+  <div class="wave"></div>
+
+  <footer class="footer">
+    © Danis Atia Agara / 243307041
+  </footer>
+
+  <script>
+    document.querySelector('.ui.modal .close').addEventListener('click', function() {
+      document.getElementById('login-modal').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
